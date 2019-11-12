@@ -1,9 +1,9 @@
 <h1>Blog Posts</h1>
-
+<%= link_to "New", new_blog_post_path %>
 <ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, blog_post_path(post) %>
-    </li>
-  <% end %>
+<% @posts.each do |post| %>
+  <li>
+    <%= link_to post.title, blog_post_path(post) %>
+  </li>
+<% end %>
 </ul>
