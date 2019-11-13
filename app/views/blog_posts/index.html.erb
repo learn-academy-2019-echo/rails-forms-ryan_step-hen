@@ -1,5 +1,7 @@
 <h1>Blog Posts</h1>
-
+<div>
+    <%= link_to "Create New Entry", new_blog_post_path %>
+</div>
 <ul>
   <% @posts.each do |post| %>
     <li>
