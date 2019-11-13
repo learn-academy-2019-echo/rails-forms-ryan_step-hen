@@ -10,10 +10,7 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    @post = BlogPost.new(
-      title: params[:title],
-      content: params[:content]
-    )
+    @post = BlogPost.new(sexy_params)
     if @post.save
       redirect_to @post
     else
@@ -21,7 +18,12 @@ class BlogPostsController < ApplicationController
     end
   end
 
+  def sexy_params
+    params.require(:blog_post).permit([:title,:content])
+  end
+
   def new
+      @post = BlogPost.new
       # render "new.html.erb"
   end
 
